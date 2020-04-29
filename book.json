@@ -1,0 +1,24 @@
+{
+  "title": "Study Notes of Programming",
+  "author": "Melissa",
+  "description": "Study notes of programming",
+  "language": "zh-hans",
+  "gitbook": "3.2.3",
+  "plugins": [
+      "splitter",
+      "expandable-chapters-small",
+      "anchors",
+      "anchor-navigation-ex",
+      "disqus",
+      "search-plus",
+      "simple-page-toc"
+  ],
+  "pluginsConfig": {
+    "anchor-navigation-ex": {
+        "showLevel": true
+    },
+    "disqus": {
+        "shortName": "beastcreative"
+    }
+  }
+}
