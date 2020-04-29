@@ -2,6 +2,9 @@
 
 * [Introduction](README.md)
 * [Part I Javascript](part1/README.md)
+    * [Meta Programming](part1/meta_programming.md)
+    * [Proxy](part1/proxy.md)
+    * [Reflect](part1/reflect.md)
     * [Promise](part1/promise.md)
     * [ES6](part1/es6.md)
     * [Vue](part1/vue.md)
