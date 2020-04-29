@@ -71,7 +71,7 @@ let obj = Object.create(proxy);
 
 #### 返回值
 
-construct 方法必须返回一个对象。
+- construct 方法必须返回一个对象。
 
 #### 拦截
 
@@ -103,7 +103,7 @@ var p = new Proxy(function () {}, {
 
 ```
 
-### get(target, propertyName, receiver)
+### get
 
 用于拦截对象的读取属性操作。
 
@@ -117,7 +117,7 @@ this 上下文绑定在 handler 对象上。
 
 #### 返回值
 
-get 方法可以返回任何值。
+- get 方法可以返回任何值。
 
 #### 拦截
 
@@ -351,7 +351,7 @@ proxy._prop = 'c'
 
 #### 返回值
 
-apply 方法可以返回任何值。
+- apply 方法可以返回任何值。
 
 #### 拦截
 
@@ -395,7 +395,7 @@ proxy.apply(null, [7, 8]) // 30
 
 #### 返回值
 
-has 方法返回一个 boolean 属性的值。
+- has 方法返回一个 boolean 属性的值。
 
 #### 拦截
 
