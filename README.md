@@ -1,9 +1,5 @@
 # Introduction
 
-开发学习记录。
-
----
-
 * [Introduction](README.md)
 * [Part I Javascript](part1/README.md)
     * [Meta Programming](part1/meta_programming.md)
@@ -12,6 +8,7 @@
     * [Promise](part1/promise.md)
     * [ES6](part1/es6.md)
     * [Vue](part1/vue.md)
+    * [React](part1/react.md)
 * [Part II CSS](part2/README.md)
     * [CSS](part2/css.md)
     * [CSS3](part2/css3.md)
