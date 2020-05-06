@@ -57,7 +57,7 @@ let obj = Object.create(proxy);
 
 ## handler 支持的拦截方法
 
-- [mdn proxy handler list](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy/handler)
+- [MDN proxy handler 支持的拦截方法列表](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy/handler)
 
 ### construct
 

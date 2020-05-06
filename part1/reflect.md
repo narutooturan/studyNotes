@@ -9,6 +9,8 @@
 
 ## 静态方法
 
+- [MDN Reflect 支持的静态方法列表](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Reflect)
+
 ### ` Reflect.construct(target, argumentList[, newTarget]) `
 
 - 描述
