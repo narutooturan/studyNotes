@@ -7,6 +7,76 @@
 - 它不是构造函数，因此是不可构造的（无法使用 new 或将其作为函数调用）。
 - 它的所有属性和方法都是静态的。
 
+## 设计目的
+
+- 将 Object 对象中的一些明显属于语言内部的方法放到 Reflect 对象上。现阶段，语言内部方法同时存在于 Object 和 Reflect 中；未来的新方法只会存在于 Reflect 中。
+
+- 修改某些 Object 对象的方法，使其合理。如修改某些 Object 对象的方法返回 false 而不是抛出错误。
+
+```javascript
+
+// ⽼写法
+try {
+  Object.defineProperty(target, property, attributes); 
+  // success
+} catch (e) { 
+  // failure 
+}
+
+
+// 新写法
+if (Reflect.defineProperty(target, property, attributes)) {
+  // success
+} else {
+  // failure
+}
+
+```
+
+- 让 Object 操作变成函数式调用。如某些 Object 操作是命令式（ ` name in obj ` ），Reflect 可以将其转为函数式调用 ` Reflect.has() `。
+
+```javascript
+
+// ⽼写法
+'assign' in Object // true
+
+// 新写法
+Reflect.has(Object, 'assign') // true
+
+```
+
+- Reflect 对象与 Proxy 对象的方法一一对应。不管 Proxy 对象上如何修改方法，都可以在 Reflect 对象上获取默认行为。
+
+```javascript
+
+// Proxy ⽅法拦截 target 对象的属性赋值⾏为。
+// 它采⽤ Reflect.set ⽅法将值赋值给对象的属性，确保完成 原有的⾏为，然后再部署额外的功能。
+Proxy(target, {
+  set: function(target, name, value, receiver) {
+    var success = Reflect.set(target, name, value, receiver);
+    if (success) {
+      console.log('property ' + name + ' on ' + target + ' set to ' + value);
+    }
+    return success;
+  } 
+});
+
+```
+
+- 方便易懂。
+
+```javascript
+
+// ⽼写法
+Function.prototype.apply.call(Math.floor, undefined, [1.75])
+// 1
+
+// 新写法
+Reflect.apply(Math.floor, undefined, [1.75])
+// 1
+
+```
+
 ## 静态方法
 
 - [MDN Reflect 支持的静态方法列表](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Reflect)
