@@ -1,5 +1,24 @@
 # Git
 
+- log
+
+```bash
+
+git log
+git log --stat
+git log -p file
+
+```
+
+- 修改 config
+
+```bash
+
+git config --global user.name {name}
+git config --global user.email {email}
+
+```
+
 - 丢弃本地需改
 
 ```bash
