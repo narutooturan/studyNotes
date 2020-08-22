@@ -53,6 +53,34 @@ this.$once('hook:created', () => {})
 
 ## 自定义组件
 
+### 动态添加组件
+
+```
+
+// 配置 vue.config.js 允许使用 extend template 新建 dom
+module.export = {
+  runtimeCompiler: true,
+}
+
+// 新建div
+let div = Vue.extend({
+  props:{},
+  data () {return {}},
+  template: `<div @click="">{{data}}</div>`,
+  methods: {
+    method () { this.$emit() }
+  }
+})
+
+// 动态添加 div
+let newDom = new div({
+  propsData: {}
+})
+newDom.$on()
+dom.appendChild(newDom)
+
+```
+
 ### 实现 v-model 双向绑定
 
 1. 监听上级组件，如果发生变化，更新 v-model 值。

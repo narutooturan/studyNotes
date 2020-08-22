@@ -1,5 +1,23 @@
 # Git
 
+- stash
+
+```
+git stash list
+git stash clear
+```
+
+- git add 后取消修改
+
+```
+
+git reset HEAD
+// 不建议使用：把全部更改的文件都恢复
+// git reset –hard HEAD
+git checkout .
+
+```
+
 - log
 
 ```bash
