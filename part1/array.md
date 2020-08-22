@@ -4,10 +4,6 @@
 ```
 [].slice.call(nodelist)
 ```
-- 新建副本
-```javascript
-let array1 = array2.slice()
-```
 - 拷贝
 ```
 // 一维，浅拷贝

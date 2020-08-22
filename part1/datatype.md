@@ -1,16 +1,14 @@
 # 数据类型
 
-## 数据类型
-
-- Number
-- Boolean
-- String
-- Null
-- Undefined
-- Object
-- Symbol
-
-## 数据类型检测
+- 数据类型
+  - Number
+  - Boolean
+  - String
+  - Null
+  - Undefined
+  - Object
+  - Symbol
+- 数据类型检测
 
 ```javascript
 

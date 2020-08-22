@@ -1,7 +1,5 @@
 # vuex
 
-## 开发记录
-
 - 何时使用vuex：当多个组件依赖同一个状态时，使用 vuex
 - vuex 使用 logger 打印 vuex 操作记录
 - vuex-persist

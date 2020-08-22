@@ -1,7 +1,5 @@
 # CSS
 
-## 开发记录
-
 - rem
   - 相对于 html font-size 来定
   - 可以在 body 中规定实际使用的 font-size，在 html 中规定 rem 使用的 font-size
