@@ -1,5 +1,7 @@
 # CSS
 
+- 可使用 drop-shadow 修改 icon 颜色
+  - 如果使用 `overflow: hidden` 或 `opacity: 0`，等方式将原有 icon 遮挡或隐藏，则其阴影也不在显示；可使用新的 dom 配合 `z-index` 属性覆盖原有 icon 实现；
 - rem
   - 相对于 html font-size 来定
   - 可以在 body 中规定实际使用的 font-size，在 html 中规定 rem 使用的 font-size
