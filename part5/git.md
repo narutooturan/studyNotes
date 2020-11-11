@@ -1,5 +1,11 @@
 # Git
 
+- 撤销本地commit
+```bash
+git reset HEAD~
+git checkout .
+```
+
 - 清除当前修改
 ```bash
 git reset --hard
@@ -10,6 +16,8 @@ git clean -fd
 ```bash
 git stash list
 git stash clear
+git stash apply stash@{2}
+git stash apply
 ```
 
 - git add 后取消修改
@@ -33,6 +41,11 @@ git config --global user.name {name}
 git config --global user.email {email}
 ```
 
+- 重命名本地分支
+```bash
+git branch -m {new_name}
+```
+
 - 合并分支
 ```bash
 git checkout {new_branch}
@@ -53,6 +66,7 @@ git checkout -b {localName} {origin/originName}
 # 2
 git pull
 git checkout -b {originName}
+
 ```
 
 - 对比分支
