@@ -6,11 +6,8 @@
   - 解决：使用 ` <keep-alive> ` 元素将动态组件包裹起来可以解决该问题
 
 - 监听 router 变化
-
 可能存在无法监听的情况，可使用多种方式。原因未知。
-
 ```javascript
-
 // method 1
 watch: {
   $route: (to, from) {
@@ -31,5 +28,4 @@ beforeRouteEnter (to, from, next) {
   next(vm => {
   })
 }
-
 ```

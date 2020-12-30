@@ -18,6 +18,8 @@
     * [Vue](part1/vue.md)
     * [Vue router](part1/vue-router.md)
     * [Vuex](part1/vuex.md)
+    * [Echarts](part1/echarts.md)
+    * [ElementUI](part1/elementui.md)
 * [Part 2 CSS](part2/README.md)
     * [CSS](part2/css.md)
     * [CSS3](part2/css3.md)

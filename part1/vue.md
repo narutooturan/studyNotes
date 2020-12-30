@@ -1,8 +1,10 @@
 # Vue
 
-## eventbus
+## 性能
 
-如果不在 beforeCreate 时 $eventBus.$off 会导致多次触发
+- interval 需要在 beforeDestroy 中 clear
+- eventbus 需要在 beforeDestroy 中 off
+  - 如果不在 beforeCreate 时 $eventBus.$off 会导致多次触发
 
 ## 数组
 
@@ -14,30 +16,22 @@
 
 ## 监听事件
 
-1. 监听组件内生命周期事件
-
-```
-
+- 监听组件内生命周期事件
+```javascript
 this.$once('hook:created', () => {})
-
 ```
 
-2. 监听其他组件生命周期事件
-
-```
-
+- 监听其他组件生命周期事件
+```javascript
 <component @hook:created=""/>
-
 ```
 
 ## transition
 
 使用 transition，需要定义 name 属性，需要为该属性设置效果。
-
-```
-
+```vue
 <transition name="fade" >
-    <div v-if="ifShow">text</div>
+  <div v-if="ifShow">text</div>
 </transition>
 
 <style>
@@ -48,15 +42,13 @@ this.$once('hook:created', () => {})
     opacity: 0;
   }
 </style>
-
 ```
 
 ## 自定义组件
 
 ### 动态添加组件
 
-```
-
+```javascript
 // 配置 vue.config.js 允许使用 extend template 新建 dom
 module.export = {
   runtimeCompiler: true,
@@ -78,17 +70,13 @@ let newDom = new div({
 })
 newDom.$on()
 dom.appendChild(newDom)
-
 ```
 
 ### 实现 v-model 双向绑定
 
-1. 监听上级组件，如果发生变化，更新 v-model 值。
-
-2. 使用 watch 监听自定义组件 v-model 值，如果发生变化触发上级组件 input 和 on-change 事件。
-
-```
-
+- 监听上级组件，如果发生变化，更新 v-model 值。
+- 使用 watch 监听自定义组件 v-model 值，如果发生变化触发上级组件 input 和 on-change 事件。
+```vue
 <sub>
     <input v-model="model" />
 </sub>
@@ -104,24 +92,19 @@ watch: {
 }
 
 <parent v-model="value" />
-
 ```
 
 ### 实现自定义事件
 
-1. 自定义组件中监听 click 等事件。
-
-2. 如果用户触发 click 等事件，则使用 $emit 触发上级组件的自定义事件。
-
-```
-
+- 自定义组件中监听 click 等事件。
+- 如果用户触发 click 等事件，则使用 $emit 触发上级组件的自定义事件。
+```vue
 <sub @click="clickEvent" />
 clickEvent () {
   $emit('clickEvent')
 }
 
 <parent @clickEvent="handleEvent" />
-
 ```
 
 ## keep alive
@@ -135,48 +118,49 @@ clickEvent () {
 ### 组件传值
 
 在 Vue 原型链中加入 eventhub，统一从 eventhub 中触发事件，响应事件。
-
 ```javascript
-
 // main.js
 Vue.prototype.$eventHub = new Vue()
 // page
 this.$eventHub.$emit('refresh')
 this.$eventHub.$on('refresh', () => {})
-
 ```
 
 ### 父子组件之间传值
 
 - 子组件 A 使用 emit 触发事件
-
 ```javascript
-
 this.$emit('event', params)
-
 ```
 
 - 子组件 A 处理触发事件，修改子组件 B props 属性
-
 ```javascript
-
 <compA @event="handleEvent" />
 handleEvent (params) {
   this.b = params
 }
 
 <compB :b="b" />
-
 ```
 
 - 子组件 B 使用 watch 监听 props 属性，执行操作
-
 ```javascript
-
 watch: {
   b () {
     // handle
   }
 }
+```
 
+## 其他
+
+- 动态调用 img
+```vue
+<img :src="image">
+
+try {
+  this.image = require(`@/assets/images/${this.url}`)
+} catch(){
+  this.image = require(`@/assets/images/default.png`)
+}
 ```
