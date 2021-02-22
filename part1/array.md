@@ -1,5 +1,11 @@
 # Array
 
+- 根据长度生成数组
+```javascript
+const arr0 = [...new Array(3).keys()];
+const arr1 = new Array(5).fill({name:'linda', age: 18, sex: 1})
+```
+
 - 获取最大值，最小值
 ```javascript
 let a = [0,1,2]
@@ -58,3 +64,9 @@ JSON.parse(JSON.stringify(obj))
 
 - filter
   - 不返回新的数组，不修改原数组
+
+- 数组转字符串
+```javascript
+array.toString()
+array.join(',')
+```

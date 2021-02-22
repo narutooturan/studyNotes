@@ -1,5 +1,22 @@
 # Git
 
+- 撤销commit
+  - revert：建立新的commit，覆盖需要撤销的commit
+```bash
+git revert {commit}
+```
+  - rebase：直接抽出需要撤销的commit
+```bash
+git rebase -i {commit_prev}
+
+# 如果无法push，可以强制push
+git push --force origin {branch}
+```
+  - reset：将需要撤销的commit之后的所有commit文件转为unstage
+```bash
+git reset {commit_prev}
+```
+
 - 撤销本地commit
 ```bash
 git reset HEAD~

@@ -154,6 +154,12 @@ watch: {
 
 ## 其他
 
+- 在组件中使用 ``` :key ``` 进行标识，可以触发组件重新渲染
+- mock 数据
+  - 安装 mockjs
+  - 新建 mock 文件夹，在 mock.js 文件中 import 其他模块的 mock 文件
+  - 在 main.js 中引入 mock.js
+  - 在 axios 中配置本地地址（请求本地即可获取mock数据，mock数据不会产生请求，无法从network中查看）
 - 动态调用 img
 ```vue
 <img :src="image">

@@ -1,5 +1,12 @@
 # javascript
 
+# string
+
+- 替换字符串所有指定关键词
+```javascript
+str.replace(/a/g, 'b');
+```
+
 ## 动画效果
 
 - 使用 class 添加动画效果，如果需要停止后重新启动动画，需要在删除 class 后停顿一会儿
@@ -15,6 +22,12 @@ setTimeout(() => {
 ```
 
 ## 事件
+
+- pjax重复加载js 导致绑定点击事件无限重复
+```javascript
+$(".demo").off().on("click", function () {
+});
+```
 
 - 判断是否向下滚动
 ```javascript
@@ -80,3 +93,5 @@ $("body").append(myElement); // console.log: It's in the DOM!
 ```
 
 - 如果重新赋值dom，会影响之前的js事件响应
+- 打开新链接
+  - 新建 a dom 对象，触发其点击事件

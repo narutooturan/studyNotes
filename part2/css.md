@@ -1,5 +1,29 @@
 # CSS
 
+
+- 居中：设置 letter-spacing 后无法完全居中
+```
+.box {
+  letter-spacing: 14px;
+  text-indent: 14px;
+  text-align: center;
+}
+```
+
+- transition
+  - transition 需要先定义初始值，后定义变化值，否则会失效
+```
+div { width: 0; transition: width 1s linear; }
+setTimeout(() => {
+  document.querySelector('div').style.width = '100px';
+}, 1000)
+```
+
+- table
+  - 使用 ```border-collapse: separate``` 后，td 存在间隔，使用 ```border-spacing: unset``` 消除
+- z-index 失效
+  - 父级 dom 可能存在 z-index，影响子级 dom
+  - 需要与 ` position: relative ` 等一起使用
 - point-events 设为 none，可以穿透当前 dom，监听下一层 dom 的事件
 - height
   - 如果存在小数 height 或 float 未 clear，可能发生部分内容消失，更改 height 为单数或偶数即可显示
